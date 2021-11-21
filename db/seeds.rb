@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+puts "Cleaning database..."
+Student.destroy_all
+50.times do 
+  Student.create!{
+    name= Faker::Name.name,
+    rut= Faker::ChileRut.full_rut,
+    campus= "Iquique",
+    course= "Caex",
+    state= true,
+    approved= true
+
+  }
+end
